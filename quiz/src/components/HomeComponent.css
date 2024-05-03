@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(163, 25, 194);
+    color: black;
+ }
+
+.container{
+    width: 1500px;
+}
+ .quizz{
+    margin-left: 10px;
+    color: white;
+ }
+ .play{
+    width: 200px;
+    height: 40px;
+    background-color:rgb(26, 153, 26);
+    border-radius: 25px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:2px solid #727078;
+    margin-left: 600px;
+
+}
+.play:focus{
+   outline: none;
+}

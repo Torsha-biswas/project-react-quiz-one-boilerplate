@@ -1,0 +1,59 @@
+.result-box{
+    width: 1500px;
+  }
+  
+  .result-board{
+    margin-top: 30px;
+    width: 900px;
+    background-color: white;
+    color: black;
+    height: 400px;
+    margin-left: 200px;
+  }
+  
+  
+  
+  
+  .main{
+    color: green;
+    display: flex;
+    font-size: 40px;
+    justify-content: center;
+  }
+  
+  .sentence{
+    display: flex;
+    justify-content: center;
+    margin-left: 40%;
+  }
+  
+  .score{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: blue;
+  }
+  
+  .score-container{
+    display: flex;
+    justify-content: space-between;
+    justify-content: space-around;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .score-container div{
+    text-align: center;
+  }
+  .play-again{
+  margin-top: 20px;
+  margin-left: 680px;
+  background-color: green;
+  
+  }
+  
+  .go-back{
+    margin-top: 20px;
+  background-color: red;
+  margin-left: 40px;
+  
+  }
