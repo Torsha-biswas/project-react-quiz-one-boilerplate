@@ -1,29 +1,81 @@
-body{
-    background-color: rgb(163, 25, 194);
-    color: black;
- }
 
-.container{
-    width: 1500px;
+body {
+   background-image: url('bg.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   color: black;
+   font-family: Arial, sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   margin: 0;
 }
- .quizz{
-    margin-left: 10px;
-    color: white;
- }
- .play{
-    width: 200px;
-    height: 40px;
-    background-color:rgb(26, 153, 26);
-    border-radius: 25px;
-    margin: auto;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border:2px solid #727078;
-    margin-left: 600px;
 
+.container {
+   max-width: 600px;
+   padding: 20px;
+   text-align: center;
 }
-.play:focus{
+
+.quizz {
+   margin-bottom: 20px;
+   color: rgb(154, 28, 28);
+   font-size: 24px;
+}
+/* Add styles for icons */
+.play svg {
+   width: 30px;
+   height: 30px;
+   margin-right: 10px;
+}
+
+.home svg {
+   width: 30px;
+   height: 30px;
+   margin-right: 10px;
+}
+
+
+.play {
+   width: 250px;
+   height: 60px;
+   background-color: rgb(171, 177, 171);
+   border-radius: 30px;
+   margin: 20px auto;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 2px solid #727078;
+   cursor: pointer;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+   font-size: 20px;
+   color: white;
+}
+
+.play:hover {
+   background-color: rgb(0, 128, 0);
+   transform: scale(1.05);
+}
+
+.play:focus {
    outline: none;
+}
+
+.play img {
+   width: 40px;
+   height: 40px;
+   margin-right: 10px;
+   animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+   from {
+       transform: rotate(0deg);
+   }
+   to {
+       transform: rotate(360deg);
+   }
 }

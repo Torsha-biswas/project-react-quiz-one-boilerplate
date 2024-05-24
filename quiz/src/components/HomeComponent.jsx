@@ -1,19 +1,20 @@
-import React, { Component } from 'react'
-import "./HomeComponent.css"
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { PlayCircleFilled, Home } from '@mui/icons-material'; // Import icons
+import './HomeComponent.css';
 
-export default class Homepage extends Component{
- render(){
-    return(
-        <>
-        <div className='container'>
-        <h2 className='quizz'>Quiz App</h2>
-            <button className='play'>Play</button>
-        </div>
-        </>
-    )
- }
+const HomeComponent = () => {
+  return (
+    <div className="container">
+      <h1 className="quizz">Quiz App</h1>
+      <div className="play">
+        <Link to="/quiz">
+          <PlayCircleFilled /> Play
+        </Link>
+      </div>
+      
+    </div>
+  );
+};
 
-
-}
-
-Homepage.js
+export default HomeComponent;

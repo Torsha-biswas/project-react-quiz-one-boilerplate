@@ -1,33 +1,81 @@
-import React, {Component} from "react"
-import "./QuizComponent.css"
-import quizData from "../resources/quizData.jsx"
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './QuizComponent.css';
+import questions from '../resources/quizQuestion.json';
 
-export default class Quizpage extends Component{
-    constructor(){
-        super()
-        this.state={currIndex:0}
+const QuizComponent = () => {
+  const [currIndex, setCurrIndex] = useState(0);
+  const [selectedOption, setSelectedOption] = useState('');
+  const [score, setScore] = useState(0);
+
+  const handleNext = () => {
+    setCurrIndex((prevIndex) => (prevIndex < questions.length - 1 ? prevIndex + 1 : prevIndex));
+    setSelectedOption('');
+  };
+
+  const handlePrevious = () => {
+    setCurrIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
+    setSelectedOption('');
+  };
+
+  const handleQuit = () => {
+    alert('You have quit the quiz.');
+    setCurrIndex(0);
+    setSelectedOption('');
+  };
+
+  const handleOptionClick = (option) => {
+    // Get the current question object
+    const currentQuestion = questions[currIndex];
+    // Check if selected option is correct
+    if (option === currentQuestion.answer) {
+      // Increment score if correct
+      setScore(score + 1);
+      // Generate alert for correct answer
+      alert('Correct Answer!');
+    } else {
+      // Generate alert for wrong answer
+      alert('Wrong Answer!');
     }
-    render(){
-        return(
-            <>
-             <div className="main-container">
-                <h2 className="questions">Questions</h2>
-                <h3>{quizData[this.state.currIndex].question}</h3>
-                <div className="options">
-                    <div>{quizData[this.state.currIndex].optionA}</div>
-                    <div>{quizData[this.state.currIndex].optionB}</div>
-                    <div>{quizData[this.state.currIndex].optionC}</div>
-                    <div>{quizData[this.state.currIndex].optionD}</div>
-                </div>
-                <div id="btn-container">
-                <div className="btns">
-                     <button  className="previous">previous</button>
-                     <button  className="next">Next</button>
-                     <button  className="quit">Quit</button>
-                </div>
-                </div>
-             </div>
-            </>
-        ) 
-    }
-}
+    setSelectedOption(option);
+  };
+
+  const currentQuestionNumber = currIndex + 1;
+  const totalQuestions = questions.length;
+
+  return (
+    <div className="main-container">
+      <h2 className="questions">Question {currentQuestionNumber} of {totalQuestions}</h2>
+      <div className="question-board"> {/* White board wrapper */}
+        <h3>{questions[currIndex].question}</h3>
+        <div className="options">
+          {['optionA', 'optionB', 'optionC', 'optionD'].map((optionKey) => (
+            <div key={optionKey} onClick={() => handleOptionClick(questions[currIndex][optionKey])}>
+              {questions[currIndex][optionKey]}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div id="btn-container">
+        <div className="btns">
+          <button className="previous" onClick={handlePrevious}>
+            Previous
+          </button>
+          <button className="next" onClick={handleNext}>
+            Next
+          </button>
+          <Link to={{ pathname: "/result", state: { score } }}> {/* Pass score as state */}
+            <button className="finish">
+              Finish
+            </button>
+          </Link>
+          <button className="quit" onClick={handleQuit}>
+            Quit
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default QuizComponent;

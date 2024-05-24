@@ -1,59 +1,72 @@
-.main-container{
-    width: 1200px;
-    height: 600px;
+.main-container {
+    width: 800px; /* Increased width */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.questions {
+    margin-top: 50px;
+    margin-bottom: 30px; /* Increased margin */
+    font-size: 24px; /* Increased font size */
+    color: #333;
+}
+
+/* White board styles */
+.question-board {
     background-color: white;
-    margin-left: 70px;
-    color: black;
-    text-align: center;
-}
-.questions{
-    margin-left: 0px;
-    padding-top: 100px;
-    font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
 }
 
-.options{
-    margin-top: 60px;
+.options {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    row-gap: 30px;
-}
-.options div{
-    background-color: rgb(39, 157, 226);
-    width: 500px;
-    height: 40px;
-    margin-left: 50px;
-    border-radius: 25px;
-    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Increased gap */
+    margin-bottom: 30px; /* Increased margin */
 }
 
-.btns{
-    margin-left: 35%;
-    width: 350px;
+.options div {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 25px; /* Increased padding */
+    border-radius: 8px; /* Increased border radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.options div:hover {
+    background-color: #0056b3;
+}
+
+.btns {
     display: flex;
     justify-content: space-between;
-    
-}
-.btn-container{
-       width: 1200px;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-}
-.btns button{
-   margin-top: 40px;
-   width: 100px;
-   
+    margin-top: 30px; /* Increased margin */
 }
 
-.previous{
-    background-color: blueviolet;
+.btns button {
+    width: 150px; /* Increased button width */
+    padding: 12px; /* Increased padding */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px; /* Increased font size */
 }
 
-.next{
-    background-color: green;
+.previous {
+    background-color: #ffc107;
 }
 
-.quit{
-    background-color: red;
+.next {
+    background-color: #28a745;
+}
+
+.finish {
+    background-color: #007bff;
+    color: white;
+}
+
+.quit {
+    background-color: #dc3545;
 }
